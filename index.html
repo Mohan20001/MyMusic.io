@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+				<meta charset="UTF-8"/>
+				<meta lang="En"/>
+				<title>Page title</title>
+				<script src="https://kit.fontawesome.com/d8d77ffa7e.js" crossorigin="anonymous"></script>
+				<style>
+						*{
+										margin: 0;
+										padding: 0;	
+						}	
+						.nav_tab{
+						align-items: ;: center;
+										width:100vw;
+										height:60px;
+										background: red;
+										color: white;
+						}
+						i{
+										margin:1px;
+						}
+						.nav_tab ul li{
+						display: flex;
+						float: left;
+										text-decoration: none;
+										list-style-type: none;
+										margin:15px 12% ;
+										font-weight: 900;
+						}
+						.tabs_container{
+										width: 100vw;
+										height: 100vh;
+										background:black;
+										overflow-y:hidden;
+										overflow-x:hidden;
+										color: white;
+										float: left;
+									
+						}
+						#songs_tab,#downloads_tab{
+						position: sticky;
+						top:0;
+										width: 100%;
+										height: 100%;
+										background:white;
+										color:black;
+										float: left;
+										transition: all 0.1s ease-in-out;
+										overflow-x: hidden;
+										overflow-y: scroll;
+						}						
+						#downloads{
+										opacity: 0.5;
+						}
+						#popup_container{
+										position: absolute;
+										display:none;
+										bottom: 10px;
+										padding:5px;
+										margin:1px 5%;
+										width: 90%;
+										height: 55px;
+										background: red;
+										border-radius:5px;
+										box-shadow:2px 4px 10px rgba(0,0,0,0.4);
+										animation:anim 0.2s ease-in 1;
+						}
+						@keyframes anim {
+						from{
+										margin-bottom: -150px;
+						}
+										to{
+														margin-bottom: 5%;
+										}
+						}
+					#downloads_tab ul li{
+									margin-top:-5px;	
+									margin-left: 5px;
+						}
+						@media screen and (min-width:600px){
+												#popup_container{
+																width: 45%;
+																right:1%;
+												}
+								
+								}
+								
+								@media screen and (min-width:900px){
+												#exit{
+											position: absolute;
+											right: 5%;
+							}
+								}
+								#p{
+												background:red;
+								}
+				 a{
+				      
+			           font-size:20px;
+			           font-weight: 600;
+												text-decoration: none;
+												list-style-type: none;
+												color:black;
+												margin-left: 25px;
+								}
+								#srch{
+								position:sticky;
+								top:0;
+								padding:15px;
+												background: red;
+												z-index:999999;
+								}
+								#inpt:hover{
+												outline: none;
+								}
+								#inpt{
+												border-radius: 5px;
+												padding:5px;
+												font-weight: 600;
+												font-size:15px;
+								}
+							img{
+											width: 50px;
+											height: 50px;
+											border-radius:5px;
+							}
+							#btnS{
+											width: 50px;
+											height: 40px;
+											margin:2x;
+											background: red;
+											color: white;
+											border: 0px solid black;
+											font-size: 15px;
+											font-weight: 600;
+											box-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+											padding:5px;
+											border-radius:5px;
+							}
+							#btnS:hover{
+											outline: none;
+											
+							}
+							#btnS:active{
+											transform: scale(0.9);
+							}
+							#addBtn{
+							position: absolute;
+							display: flex;
+											width: 60px;
+											height: 60px;
+											background: red;
+											bottom:-50px;
+											right: 5px;
+										
+											border-radius: 50%;
+											align-items: center;
+											justify-content: center;
+											color: white;
+											font-size: 20px;
+											font-weight: 600;
+							}
+					
+							h3{
+											margin:5px 5%;
+							}
+							
+							
+							
+							#songs{
+							position: absolute;
+											left:-5%;
+											background: transparent;
+							}
+							#downloads{
+							position: absolute;
+											right:-5%;
+											background: transparent;
+							}
+							#flash_screen,#details{
+							
+							position: absolute;
+							display:none;
+											width: 100%;
+											height: 100%;
+											background: red;
+											
+							}
+			
+							audio{
+											display:none;
+							}
+							i{
+											background: transparent;
+							}
+							
+							button{
+											background: transparent;
+							}
+							#playBtn,#prevBtn,#nextBtn,#loopBtn{
+											background: red;
+											border: 0px solid black;
+											font-size:25px;
+											margin-left: 35px;
+											color: white;
+							}
+							#exit{
+							position: absolute;
+											margin-left: 25px;
+											right: 5px;
+											color: white;
+											background: transparent;
+							}
+							#playBtn{
+							font-size:25px;
+							}
+							Button:hover{
+							outline:none;
+							}
+							
+							#toast{
+											position: absolute;
+											display: none;
+											align-items: center;
+										animation: animToast 0.3s ease-in 1;
+											justify-content: center;
+											width: 100px;
+											height:30px;
+											border-radius: 5px;
+											background: black;
+											color: white;
+											bottom: 90px;
+											margin-left: 50%;
+											transform: translate(-50%,0%);
+										opacity: 0.8;	
+										
+							}
+							@keyframes animToast{
+											from{
+															opacity: 0.0;
+											}
+											to{
+															opacity: 0.8;
+											}
+							}
+							
+							#loopBtn{
+											font-size: 16px;
+											margin-left: 14px;
+							}
+							
+					#banner{
+					
+									width: 90vw;
+									height: 180px;
+									margin-top:3%;
+									margin-left: 50%;
+									background: transparent;
+									transform: translate(-50%,0%);
+								overflow: scroll;
+									border-radius:5px;
+									box-shadow: 2px 5px 10px rgba(0,0,0,0.2);
+					}			
+					
+					#banner img{
+					display: inline-flex;
+									width: 100%;
+									height: 100%;
+									float:left;
+				  align-items: center;
+				  animation:slider 2.4s linear infinite;
+				  transition:all .4s linear;
+					}																				
+		
+		@keyframes slidr{
+						from{
+										opacity:0.7;
+										transform: scale(1.0);
+						}
+						to{
+										opacity:1.0;
+										transform: scale(1.1);
+						}
+		}
+		
+		#subtitle{
+		margin-left: 5%;
+		margin-top: 10px;
+						font-size: 25px;
+						font-weight: 900;
+		}
+		
+		#flash_screen #d,#d{
+		display:inline;
+						width: 125px;
+						height: 125px;
+					//	background: url("p3.jpg") no-repeat;
+
+						margin:1px;
+					 border-radius: 3px;
+					 background-position: center;
+					 background-size:125px 125px;				 
+		}
+		#teluguSongs #d,#hindiSongs #d,#englishSongs #d{
+										margin: 5%;
+		}
+						#teluguSongs,#hindiSongs{
+										width:100vw;
+										height:128px;
+										overflow: hidden;
+						}
+		
+		#teluguSongs img,#flash_screen img,#englishSongs img,#hindiSongs img{
+						width: 125px;
+						height: 125px;
+		}
+		#more{
+						position:absolute;
+						margin-top:-25px;
+						font-size:15px;
+						color: red;
+						right:5%;
+		}
+		#flash_screen, #details{
+		display:none;
+		position: absolute;
+						width: 100%;
+						height: 100%;
+						background:white;
+						overflow:scroll;
+		}
+		#backW{
+						width:100%;
+						height:60px;
+						background:red;
+				
+		}
+		#retrn{
+		position: absolute;
+		display:none;
+		align-items: center;
+		color: white;
+		font-weight: 600;
+		justify-content: center;
+						width:60px;
+						height:60px;
+						border-radius:50%;
+						background:red;
+						bottom:5%;
+						right:5%;
+		}
+		#flash_screen ul li{
+		position: absolute;
+		list-style-type: none;
+						display: inline;
+						float: left;
+		}
+		a{
+						text-decoration: none;
+		}
+		#flash_screen div{
+						display: inline;
+						
+		}
+		#flash-screen img{
+						margin-top:70px;
+		}
+		#details{
+		position: absolute;
+		height: 70vh;
+						display: none;
+						bottom: -60px;
+						background: red;
+						border-top-left-radius: 20px;
+						border-top-right-radius: 20px;
+						box-shadow: 0px -4px 10px rgba(0,0,0,0.4);
+		overflow:hidden;	
+						
+		}
+		#details img{
+		position: absolute;
+						width: 200px;
+						height: 200px;
+						border-radius: 20px;
+						top:25px;
+						left: 50%;
+						transform: translate(-50%,0%);
+		}
+		#details #songName{
+						position:absolute;
+						font-size: 30px;
+						font-weight: 900;
+						color:white;
+						top:60%;
+				left: 50%;
+				transform: translate(-50%,0%);
+		}
+		#hdDetails{
+						position: absolute;
+						top:20px;
+						right: 20px;
+						font-size: 25px;
+						font-weight: 600;
+						color:white;
+						border: 0px solid black;
+		}
+		#sss{
+		position: absolute;
+						display: block;
+						bottom: 10px;
+						left: 50%;
+						transform: translate(-50%,0%);
+	}
+	#settings{
+					width: 100vw;
+					height:70px;
+					background: white;
+					box-shadow: 0px -4px 10px rgba(0,0,0,0.4);
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+	}
+	#smore{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+					width: 100%;
+					height: 100%;
+					font-weight: 600;
+					color: red;
+					background:;
+	}
+	#scont{
+	display: none;
+					width: 100%;
+					height: 150px;
+					color: black;
+					font-weight: 900;
+					background:white;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+}
+#sexite{
+position: absolute;
+				right: 5px;
+				color:black;
+				margin: 5%;
+				font-weight: 500;
+				font-size: 20px;
+				border: 0px solid black;
+}
+#scont input{
+margin-top: 20px;
+margin-left: 8px;
+				width: 20px;
+				margin: 5%;
+}				
+				</style>
+</head>
+<body>
+				
+		<nav id="nav_tab" class="nav_tab">
+							<ul>
+									<li id="songs">Home<i class="fas fa-home"></i></li>
+										<li id="downloads">Recent songs<i class="fas fa-history"></i></li>
+								</ul>
+				</nav>
+				
+				
+				<div class="tabs_container" id="tabs_container">
+								<div id="songs_tab">
+												<div id="srch"><input list="my_list" type="search" name="" id="inpt"style="width:80%; height:40px;" placeholder="Enter song name">
+												<datalist id="my_list">
+																
+												</datalist>
+					<button id="btnS"><i class=	"fas fa-search"></i></button>
+								</div>
+					<div id="subtitle">Top Hits</div>
+					<div id="banner">
+									<img id="imgS" src="p10.jpeg" alt="">
+								
+					</div>
+					<div id="subtitle">English Hits
+<div id="more" onclick="homeSongs()">More</div>
+</div>
+					<div id="teluguSongs">
+									<ul id="lizt">
+												
+									</ul>
+					</div>
+					
+						<div id="subtitle">Hindi Hits
+<div id="more" onclick=" hindi()">More</div>
+</div>
+					<div id="hindiSongs">
+					</div>
+					
+						<div id="subtitle">Telugu Hits
+<div id="more" onclick="english()">More</div>
+</div>
+					<div id="englishSongs">
+					</div>
+		<div id="settings">
+						<div id="smore">Settings</div>
+						<div id="scont">
+										<button id="sexite">x</button>
+							<label><input id="user_time" type="time">Timer</label>
+						</div>
+		</div>
+								</div>
+								<div id="downloads_tab">		
+							<ul style="list-style:none">
+											<ul id="list">
+														
+											</ul>
+							</ul>
+							
+								</div>
+				</div>
+				<div id="popup_container">
+								<img  id="music_img" src="p3.jpg" alt="not found" width="50px" height="50px"></img>
+								<audio id="sng"controls>
+												<source id="ads" src="" type="">
+								</audio>
+								<button onclick=" prevSongPlay()" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+								<button id="playBtn"><i id="iplay" class="fas fa-pause"></i></button>
+								<button onclick=" nextSongPlay()" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+								<!--<button id="loopBtn" onclick="playSingleSong()">
+												<i class="fas fa-retweet"></i>
+								</button>-->
+								<span id="exit">
+												<i class="fas fa-times"></i>
+								</span>
+				</div>
+				
+				<div id="addBtn">
+								<i class="fa fa-plus" aria-hidden="true"></i>
+				</div>
+			<span id="toast">
+								no songs
+				</span>
+				<div id="flash_screen">
+								<ul id="ulz">
+												
+								</ul>
+								
+				</div>
+				
+				<div id="retrn" onclick="retrn()">
+								Back
+				</div>
+				<div id="details">
+								<button id="hdDetails">x</button>
+								<img id="Big_img" src="p3.jpg" width="200px" height="200px" alt="">
+						
+						<marquee width="250px" id="songName">song bjjvjgfcname</marquee>
+						
+						<audio id="sss"controls autoplay>
+												<source id="ssr" src="" type="">
+								</audio>
+				</div>
+				<script>
+	var TeluguSongs;
+ var HindiSongs;
+ var EnglishSongs;
+								
+								var library=[
+ [
+ "Faded.jpeg",
+ 			"lela lela.jpeg",
+ 			"ava max.jpg",
+ 			"p7.jpg",
+ 			"rauf and faik.jpeg",
+ 			
+ 			"p11.jpeg",
+ 			"p10.jpeg",
+ 			"p12.jpeg",
+ 			"p13.jpeg",
+ 			"p13.jpeg",
+ 			"p15.jpg",
+ 			"ava.jpeg",
+ 			"peaky blinder.jpeg",
+ 			"Lucifer.jpeg",
+    "cd.gif"
+ ],
+ [
+ "Faded.mp3",
+ 			"Lela Lela le.mp3", 			"Alan-Walker-Ava-Max-Alone-Pt-II.mp3",
+ 			"devil eyes.mp3",
+ 			"Rauf Faik - детство.mp3",
+ 			
+ 			"Peaches.mp3",
+ 			"Sia Cheap Thrills.mp3",
+ 			"Whoopty.mp3",
+ 			"Иса.mp3",
+ 			"Ночной_рейс.mp3",
+ 			"New Americana.mp3",		 
+ 						"who is laughing.mp3",		
+ 			 			"peaky blinder.mp3",
+ 			 			"LUCIFER.mp3",
+ 			"ENGLISH RINGTONE.mp3"
+ 			
+ ]		
+ ];
+ 
+ var English=
+[
+[
+"Sittharala Sirapadu.jpeg",
+"Life Of Ram.jpeg",
+"p9.jpg",
+"p14.jpeg"
+],
+[
+"Sittharala Sirapadu.mp3",
+"Life Of Ram.mp3",
+"Nee Kannu Neeli Samudram.mp3",
+"single kingulam.mp3"
+]
+];
+ 
+ var Arhindi=
+[
+[
+"Bombay to punjab.jpeg",
+"Back to start.jpeg",
+"peace.jpg",
+"p8.jpg"
+],
+[
+"Bombay To Punjab.mp3",
+"Back to Start.mp3",
+"peace.mp3",
+"Beat Of Master.mp3"
+]
+];
+
+var condition_number;
+var timer_on=true;
+
+var RA=[];
+var RB=[];
+
+var all_posters=[...Arhindi[0], ... English[0], ...library[0]];
+
+var all_songs=[...Arhindi[1], ...English[1], ... library[1]];
+
+var list_arr=[];
+
+var sss=document.getElementById("sss");
+var ssr=document.getElementById("ssr");
+var songName=document.getElementById("songName");
+
+	var BigImg=document.getElementById("Big_img");
+
+function search_arr() {
+				for(var i=0;i<=all_songs.length-1;i++){
+								var temp=all_songs[i]. split('.mp3');
+								list_arr[i]=temp[0];
+				}
+}
+search_arr();
+
+					function list_of_search() {
+									
+						list_arr.sort();
+									var my_list=document.getElementById("my_list");
+									for(var i=0;i<=list_arr.length;i++){
+													var options=document.createElement("option");
+							options.setAttribute('value',list_arr[i]);						
+													my_list.appendChild(options);
+									}
+					
+					}
+					
+				list_of_search();
+					
+								var currentSong=0;
+					var toast=document.getElementById("toast");
+								var ad=document.getElementById("ad");
+								var songsBtn=document.getElementById("songs");
+								var downloadsBtn=document.getElementById("downloads");
+								var songsTab=document.getElementById("songs_tab");
+								var downloadsTab=document.getElementById("downloads_tab");
+								
+								var popup=document.getElementById("popup_container");
+								
+								var exit=document.getElementById("exit");
+								
+								var addBtn=document.getElementById("addBtn");
+								
+								var sng=document.getElementById("sng");
+								
+								exit.onclick=function() {
+												popup.style.display="none";
+												sng.pause();
+								}
+						//............li
+						
+							var li=document.createElement("li");
+							
+							var list_is=true;
+								downloadsBtn.onclick=function() {
+								if (list_is) {
+								recentSongs();
+								list_is=false;
+								}
+					songsTab.style.height="0px";
+songsBtn.style.opacity="0.5";
+
+addBtn.style.display="none";										downloadsBtn.style.opacity="1.0";
+												downloadsTab.style.height="100%";
+								}
+								songsBtn.onclick=function() {
+								
+								list_is=true;
+								list.innerHTML=" ";	songsTab.style.height="100%";
+												songsBtn.style.opacity="1.0";
+											addBtn.style.display="flex";	downloadsBtn.style.opacity="0.5";
+			downloadsTab.style.height="0px";
+			
+		/*	var s=	document.createElement("p");
+			s.innerText="hello";
+						s.id="p";
+					    songsTab.append(s);*/
+					    }  
+					    //event songs.
+					    try{
+							list.onclick = function(e)
+  			 { 
+  			 e.preventDefault(); 
+  			 var elm = e.target;
+  			  var audio = document.getElementById("sng");			
+  			  var source=document.getElementById("ads");
+  			  
+  			  showSongName(elm.getAttribute("data-value"));
+  			  source.src=elm.getAttribute("data-value") ;   
+  			 
+  			  for(var k=0;k<=arrLength;k++){
+  			  if (elm.getAttribute("data-value")==library [1][k]) {
+  			    				currentSong=k;
+  			    				EnglishSongs=true;
+  			    				HindiSongs=false;
+  			    				TeluguSongs=false;
+
+  			    }
+  			    
+  			    if (elm.getAttribute("data-value")==Arhindi [1][k]) {
+  			    				currentSong=k;
+  			    				EnglishSongs=false;
+  			    				HindiSongs=true;
+  			    				TeluguSongs=false;
+  			    }
+  			    
+  			    if (elm.getAttribute("data-value")==English [1][k]) {
+  			    				currentSong=k;
+  			    				EnglishSongs=false;
+  			    				HindiSongs=false;
+  			    				TeluguSongs=true;
+  			    }
+  		  }	  		  			  			    
+ 
+  		  var iplay=document.getElementById("iplay");
+  		  iplay.setAttribute('class','fas fa-pause');
+  			    pp()
+  			    posterJ();
+  			     audio.load();  
+  			    audio.play();
+  			    popup.style.display="flex";
+       };
+       
+ }
+ catch(error){
+ 				alert("oops! something went wrong.")
+ }
+ 
+
+ addBtn.onclick=function() {
+ var imgI=document.getElementById("music_img");
+ 
+ imgI.setAttribute("src","cd.gif");
+ var audio = document.getElementById('sng');
+  var source = document.getElementById('ads');
+ 			var inp=prompt("Enter song path/");
+ 			if(inp.endsWith(".mp3")){
+ 			source.src=inp;
+ 			source.preload="true";
+ 			audio.load();
+ 			audio.play();
+ 			popup.style.display="flex";
+ 			}else{
+ 							alert("Involid URL????");
+ 			}
+ }
+  
+ 
+ var arrLength=library[1].length;
+				var ls=document.createElement("li");
+ list.append(ls);
+ 
+ 
+ function recentSongs() {
+ 				
+ for(var i=0;i<RB.length;i++){
+ var ls=document.createElement("li");
+ list.append(ls);
+ var li=document.createElement("li");
+ 
+ var img=document.createElement("img");
+ img.setAttribute('src', RA[i]);
+ 
+ var songName=RB[i].split (".mp3");
+ 
+ 
+ var a=document.createElement("a");
+ a.setAttribute('data-value', RB[i]);
+ 
+ if(songName[0].length>15){
+ 				var sub=songName[0].substr(0,18);
+ 				a.innerText=sub+"...";
+ }else{ 
+ a.innerText=songName[0];
+ }
+ 
+ li.appendChild(img);
+ li.appendChild(a);
+ list.appendChild(li);
+   }
+ }
+ 
+ 
+// searching..........................
+
+ btnS.onclick=function() {
+ var inpt=document.getElementById("inpt").value;
+ 				
+ for(var i=0;i<=all_songs.length-1;i++){
+ 				var uE=all_songs[i]. split(".");
+ 		var x=uE[0].toUpperCase();
+ 		var y=inpt.toUpperCase();
+try{
+ 				if (x==y) {
+ 							srch=false;
+ 								var audio = document.getElementById('sng');
+  var source = document.getElementById('ads'); 				 				
+  source.src=all_songs[i];
+  posterJ();
+ 		 audio.load();
+ 			audio.play();
+ 			popup.style.display="flex";
+ 				    }
+ 				    }catch(error){
+ 				    				alert("error");
+ 				    }
+ 				   
+      }
+ 
+ }
+
+//....................................
+ 
+ 
+ function prevSongPlay(){
+ 
+ if(currentSong>0)
+ { 
+ currentSong-=1;
+ 				var a=document.getElementById("sng");
+ 				var s=document.getElementById("ads");
+ 				var sm=document.getElementById("sss");
+ 				var sr=document.getElementById("ssr");
+ 				
+ 			if (condition_number==3) {
+ 								
+ 				source.setAttribute("src", English [1][currentSong]);
+ 				showSongName(English [1][currentSong]);
+ 	ssr.setAttribute("src", English [1][currentSong]); 		
+ 			}
+ 				
+ 				if (condition_number==2) {
+ 								source.setAttribute("src", Arhindi [1][currentSong]);
+ 								showSongName(Arhindi[1][currentSong]);
+ 								ssr.setAttribute("src", Arhindi [1][currentSong]); 		
+ 								
+ 				}
+ 				
+ 				if (condition_number==1) {
+ 								source.setAttribute("src", library [1][currentSong]);
+ 								
+ 								showSongName(library [1][currentSong]);
+ 								
+ 								ssr.setAttribute("src", library[1][currentSong]); 		
+ 				}
+ 			
+ 			var iplay=document.getElementById("iplay");
+  		  iplay.setAttribute('class','fas fa-pause');
+  			    pp()
+ 			
+ 			posterJ();
+ 			a.load();
+ 	  a.play();
+ 	  	
+ 			}else {
+ 							toast.style.display="flex";
+ 							setTimeout('toastHide()',3000);
+ 			}
+ }
+ 
+ function nextSongPlay(){
+ if(currentSong<arrLength-1)
+ {
+ currentSong+=1;
+ 				var a=document.getElementById("sng");
+ 				var s=document.getElementById("ads");
+ 				var sm=document.getElementById("sss");
+ 				var sr=document.getElementById("ssr");
+ 				
+ 			if (condition_number==3) {
+ 								
+ 				source.setAttribute("src", English [1][currentSong]);
+ 				showSongName(English [1][currentSong]);
+ 	ssr.setAttribute("src", English [1][currentSong]); 		
+ 			}
+ 				
+ 				if (condition_number==2) {
+ 								source.setAttribute("src", Arhindi [1][currentSong]);
+ 								showSongName(Arhindi[1][currentSong]);
+ 								ssr.setAttribute("src", Arhindi [1][currentSong]); 		
+ 								
+ 				}
+ 				
+ 				if (condition_number==1) {
+ 								source.setAttribute("src", library [1][currentSong]);
+ 								
+ 								showSongName(library [1][currentSong]);
+ 								
+ 								ssr.setAttribute("src", library[1][currentSong]); 		
+ 				}
+ 			
+ 			var iplay=document.getElementById("iplay");
+  		  iplay.setAttribute('class','fas fa-pause');
+  			    pp()
+ 			
+ 			posterJ();
+ 			a.load();
+ 			a.play();
+ 	
+ 			}else {
+ 							toast.style.display="flex";
+ 							setTimeout('toastHide()',2000);
+ 			}
+ }
+ function pp() {
+ 				
+ var playingSong=true;
+ var playBtn=document.getElementById("playBtn");
+ var iplay=document.getElementById("iplay");
+ 
+ playBtn.onclick=function() {
+ 				
+ 				if(playingSong) {
+ 								iplay.setAttribute('class','fas fa-play');
+ 								playingSong=false;
+ 								sng.pause();
+ 				}else {
+ 								iplay.setAttribute('class','fas fa-pause');
+ 								playingSong=true;
+ 								sng.play();
+ 				}			
+ }
+ }
+ pp();
+ 
+ function toastHide(){
+ 							toast.style.display="none";
+ }
+ var loopBtn=document.getElementById("loopBtn");
+ 
+/* var singleSong=true;
+function playSingleSong(){
+				if (singleSong) {
+								audio.loop="false";
+								singleSong=false;
+								loopBtn.style.color="#ffffff";
+				}else{
+				     audio.loop="true";
+								singleSong=true;
+								loopBtn.style.color="#000000";
+				}
+}*/
+ 
+ function posterJ() {
+ 				var posterI= document.getElementById("music_img");
+ 				var BigImg=document.getElementById("Big_img");
+ 				if(EnglishSongs) {
+ 								
+ 				posterI.setAttribute('src', library [0][currentSong]);
+ 				BigImg.setAttribute('src', library [0][currentSong]);
+ 				}
+ 				if(HindiSongs) {
+ 								
+ 				posterI.setAttribute('src', Arhindi [0][currentSong]);
+ 				BigImg.setAttribute('src', Arhindi [0][currentSong]);
+ 				}
+ 				if(TeluguSongs) {
+ 								
+ 				posterI.setAttribute('src', English [0][currentSong]);
+ 				BigImg.setAttribute('src', English [0][currentSong]);
+ 				}
+ }
+ var audio = document.getElementById('sng');
+ 
+ var source = document.getElementById('ads'); 			
+
+ var asm=document.getElementById("sss");
+ var asr=document.getElementById("asr");
+ 
+function playList() {
+ audio.addEventListener("ended",function() {
+ var ps=currentSong;
+ 				currentSong++;
+ 				if (condition_number==3) {
+ 								
+ 				source.setAttribute("src", English [1][currentSong]);
+ 		ssr.setAttribute("src", English[1][currentSong]);
+ 		showSongName(English [1][currentSong]);
+ 		
+ 				playedList(English[1][ps], English [0][ps]);
+ 				}
+ 				
+ 				if (condition_number==2) {
+ 								source.setAttribute("src", Arhindi [1][currentSong]);
+ 								
+ 								ssr.setAttribute("src", Arhindi [1][currentSong]);
+ 				showSongName(Arhindi[1][currentSong]);
+ 				playedList(Arhindi[1][ps],Arhindi [0][ps]);
+ 				}
+ 				
+ 				if (condition_number==1) {
+ 								source.setAttribute("src", library [1][currentSong]);
+ 								
+ 								ssr.setAttribute("src", library[1][currentSong]);
+ 				showSongName(library [1][currentSong]);
+ 				playedList(library[1][ps], library [0][ps]);
+ 				}
+ 				
+ 				posterJ();
+ 			audio.load();
+ 			audio.play();
+ });
+ }
+ 
+playList();
+
+
+var iJ=document.getElementById("imgS");
+var img_stock=["p9.jpg","p13.jpeg","p8.jpg"
+,"p7.jpg"];
+var slideNo=0;
+
+function slider() {
+
+if(slideNo<=img_stock.length-1){
+				iJ.setAttribute("src",img_stock[slideNo]);
+				slideNo++;
+}else{
+ 				slideNo=0;
+    }
+ }
+ setInterval("slider()",2400);
+ 
+ //......................................
+ var retrnBtn=document.getElementById("retrn");
+ 
+ var navTab=document.getElementById("nav_tab");
+ var fs=document.getElementById("flash_screen");
+
+ var telugu_songs=document.getElementById("teluguSongs");
+ var ulz=document.getElementById("ulz");
+  
+  
+ function homeSongs() {
+ fs.style.display="block";
+ navTab.style.display="none";
+ addBtn.style.display="none";
+ retrnBtn.style.display="flex";
+ //......
+ var lizt=document.getElementById('lizt');
+ 
+ for(var h=0;h<arrLength;h++){
+ 
+ var l=document.createElement("li");
+ var a=document.createElement("a");
+ 
+ var div=document.createElement("div");
+ div.id="d";
+ 
+ var iBox=document.createElement("img");
+iBox.setAttribute('src', library [0][h]);
+
+iBox.setAttribute('data-value', library [1][h]);
+ 
+     ulz.appendChild(ls);
+    ls.appendChild(a);
+    a.appendChild(div);
+    div.appendChild(iBox);
+   // fs.appendChild(ulz);
+     } 				
+ }
+ 
+ function HSongs() {
+ for(var h=0;h<=arrLength-1;h++){
+ var Ddiv=document.createElement("div");
+ Ddiv.id="d";
+ 
+ var iBox=document.createElement("img");
+ iBox.setAttribute('src', library [0][h]);
+       telugu_songs.appendChild(Ddiv);
+       Ddiv.appendChild(iBox);
+       
+       
+     } 				
+ }
+ 
+ HSongs();
+ 
+ function retrn() {
+ 				fs.style.display="none";
+ 				ulz.innerHTML="";
+ 				ls.innerHTML="";
+ 				retrnBtn.style.display="none";
+ 				navTab.style.display="block";
+ 				addBtn.style.display="flex";
+ }
+ 
+ 
+
+
+function english() {
+ fs.style.display="block";
+ navTab.style.display="none";
+ addBtn.style.display="none";
+ retrnBtn.style.display="flex";
+ //......
+ var lizt=document.getElementById('lizt');
+ 
+ for(var h=0;h<=English [1]. length-1;h++){
+ 
+ var l=document.createElement("li");
+ var a=document.createElement("a");
+ 
+ var div=document.createElement("div");
+ div.id="d";
+ 
+ var iBox=document.createElement("img");
+iBox.setAttribute('src', English [0][h]);
+
+iBox.setAttribute('data-value', English [1][h]);
+ 
+     ulz.appendChild(ls);
+    ls.appendChild(a);
+    a.appendChild(div);
+    div.appendChild(iBox);
+    //fs.appendChild(ulz);
+     } 				
+ }
+ 
+ function ESongs() {
+ for(var h=0;h<=English.length-1;h++){
+ var Ddiv=document.createElement("div");
+ Ddiv.id="d";
+ 
+ var iBox=document.createElement("img");
+ iBox.setAttribute('src', English[0][h]);
+       englishSongs.appendChild(Ddiv);
+       Ddiv.appendChild(iBox);
+       
+     } 				
+ }
+ 
+ ESongs();
+ 
+ function hindi() {
+ fs.style.display="block";
+ navTab.style.display="none";
+ addBtn.style.display="none";
+ retrnBtn.style.display="flex";
+ //......
+ var lizt=document.getElementById('lizt');
+ 
+ for(var h=0;h<=Arhindi[1].length-1;h++){
+ 
+ var l=document.createElement("li");
+ var a=document.createElement("a");
+ 
+ var div=document.createElement("div");
+ div.id="d";
+ 
+ var iBox=document.createElement("img");
+iBox.setAttribute('src', Arhindi [0][h]);
+
+iBox.setAttribute('data-value', Arhindi [1][h]);
+ 
+     ulz.appendChild(ls);
+    ls.appendChild(a);
+    a.appendChild(div);
+    div.appendChild(iBox);
+   // fs.appendChild(ulz);
+     } 				
+ }
+ 
+ function BWSongs() {
+ for(var h=0;h<=Arhindi[0].length-1;h++){
+ var Ddiv=document.createElement("div");
+ Ddiv.id="d";
+ 
+ var iBox=document.createElement("img");
+ iBox.setAttribute('src',Arhindi[0][h]);
+       hindiSongs.appendChild(Ddiv);
+       Ddiv.appendChild(iBox);
+       
+     } 				
+ }
+ 
+ BWSongs();
+
+ulz.onclick=function(e) {
+try{
+e.preventDefault();
+var ev=e.target;
+	
+				
+  			  var audio = document.getElementById("sng");			
+  			  var source=document.getElementById("ads");
+  			  
+  			  source.src=ev.getAttribute("data-value") ;   
+  			  showSongName(ev.getAttribute("data-value"));
+  			  ssr.src=ev.getAttribute("data-value");
+
+  			  for(var k=0;k<=arrLength;k++){
+  			  if (ev.getAttribute("data-value")==library [1][k]) {
+  			    				currentSong=k;
+  			    				EnglishSongs=true;
+  			    				HindiSongs=false;
+  			    				TeluguSongs=false;
+  			    	condition_number=1;
+  			    }
+  			    if (ev.getAttribute("data-value")==Arhindi [1][k]) {
+  			    				currentSong=k;
+  			    				EnglishsSongs=false;
+  			    				HindiSongs=true;
+  			    				TeluguSongs=false;
+  			    			condition_number=2;
+  			    }
+  			    			if (ev.getAttribute("data-value")==English [1][k]) {
+  			    				currentSong=k;
+  			    				EnglishsSongs=false;
+  			    				HindiSongs=false;
+  			    				TeluguSongs=true;
+  			    		condition_number=3
+  			    }
+  } 
+  var iplay=document.getElementById("iplay");
+  		  iplay.setAttribute('class','fas fa-pause');
+  			    pp()
+  			    posterJ();
+  			   audio.load();  
+  			   audio.play();
+  			    popup.style.display="flex";
+      } 
+        catch(error){
+ 				alert("oops! something went wrong.");
+ 
+    }
+}
+
+
+
+function playedList(songPlayed, posterImg) {
+RA.push(posterImg);
+				RB.push(songPlayed);
+}
+
+var mI=document.getElementById("music_img");
+var details=document.getElementById("details");
+var hdD=document.getElementById("hdDetails");
+
+mI.onclick=function () {
+				details.style.display="block";
+}
+hdD.onclick=function () {
+				details.style.display="none";
+}
+
+function showSongName(sg) {
+var sh=sg.split('.mp3');
+				songName.innerHTML=sh[0];
+}
+
+var smore=document.getElementById("smore");
+var scont=document.getElementById("scont");
+var sexite=document.getElementById("sexite");
+
+smore.addEventListener("click",function () {
+				scont.style.display="block";
+				smore.style.display="none";
+				popup.style.display="none";
+				addBtn.style.display="none";
+});
+sexite.addEventListener('click',()=>{
+				scont.style.display="none";
+				smore.style.display="flex";
+				popup.style.display="flex";
+				addBtn.style.display="flex";
+})
+			
+			function timer() {
+			if(timer_on){
+			var user_input_time=document.getElementById("user_time"). value;
+							
+						var user_time=user_input_time.split(":");
+						var time_user=parseInt(user_time[0]*60+user_time[1]*60);
+						var world=new Date();
+						
+						var world_hours=world.getHours();
+						
+						var world_minutes=world.getMinutes()
+						
+							var time_world=parseInt(world_hours*60+world_minutes*60);
+							if (time_user==time_world) {
+											audio.pause();
+											
+							     }	
+							}
+			}
+			setInterval("timer()",1000);
+		
+				</script>
+			
+</body>
+</html>
